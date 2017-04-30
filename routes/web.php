@@ -11,10 +11,15 @@
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::get('/', 'PagesController@getIndex');
 Route::get('about', 'PagesController@getAbout');
+
+Auth::routes();
+
 Route::get('pages/contact', 'PagesController@getContact');
+
+Route::resource('posts', 'PostController');
