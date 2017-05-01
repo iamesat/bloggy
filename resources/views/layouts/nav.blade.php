@@ -36,17 +36,39 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mijn Account <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Mijn posts</a></li>
-                        <li><a href="#">Profiel</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Log uit</a></li>
 
-                    </ul>
-                </li>
+                @if (Route::has('login'))
+                        <li>
+                    @if (Auth::check())
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mijn Account <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ url('/home') }}">Mijn posts</a></li>
+                            <li><a href="#">Profiel</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    Logout
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                    @else
+                        <a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
+                        <a href="{{ url('/register') }}">Register</a>
+                    @endif
+                        </li>
+                @endif
+
             </ul>
             <form class="navbar-form navbar-right">
                 <div class="form-group">

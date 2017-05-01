@@ -23,3 +23,5 @@ Auth::routes();
 Route::get('pages/contact', 'PagesController@getContact');
 
 Route::resource('posts', 'PostController');
+
+Route::get('blog/home', 'HomeController@getHome');
