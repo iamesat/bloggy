@@ -5,26 +5,21 @@
 
 @include('layouts/nav')
 
-<div class="container">
+<div class="container" style="margin-top: 120px;">
 
     @yield('content')
 
 </div>
 
-<footer class="footer">
-    <div class="container">
-        <p class="text-muted">Place sticky footer content here.</p>
-    </div>
-</footer>
+
 
 
 <!-- Modal voor login -->
-<a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
 
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
         <div class="loginmodal-container">
-            <h1>Login to Your Account</h1><br>
+            <h1>Login</h1><br>
             <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
                 {{ csrf_field() }}
 
@@ -60,7 +55,7 @@
                     <div class="col-md-6 col-md-offset-4">
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
+                                <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Onthoud mij
                             </label>
                         </div>
                     </div>
@@ -73,21 +68,20 @@
                         </button>
 
                         <a class="btn btn-link" href="{{ route('password.request') }}">
-                            Forgot Your Password?
+                           Wachtwoord vergeten?
                         </a>
                     </div>
                 </div>
             </form>
-
-            <div class="login-help">
-                <a href="#">Register</a> - <a href="#">Forgot Password</a>
-            </div>
         </div>
     </div>
 </div>
 
+@include('layouts/footer')
 <!-- Einde modal voor login -->
 
+<!-- css -->
+<link rel="stylesheet" href="{{URL::asset('css/custom.css')}}">
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->

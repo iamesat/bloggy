@@ -14,13 +14,18 @@
         <div class="col-md-4">
             <div class="well">
                 <dl class="dl-horizontal">
-                    <dt>Gemaakt op:</dt>
-                    <dd>{{ date('j M, Y h:ia', strtotime($post->created_at)) }}</dd>
+                    <label>Url:</label>
+                    <p><a href="{{ url('blog/'.$post->slug) }}">Link</a></p>
                 </dl>
 
                 <dl class="dl-horizontal">
-                    <dt>Laasts geupdate:</dt>
-                    <dd>{{ date('j M, Y h:ia', strtotime($post->updated_at)) }}</dd>
+                    <label>Gemaakt op:</label>
+                    <p>{{ date('j M, Y h:ia', strtotime($post->created_at)) }}</p>
+                </dl>
+
+                <dl class="dl-horizontal">
+                    <label>Laasts geupdate:</label>
+                    <p>{{ date('j M, Y h:ia', strtotime($post->updated_at)) }}</p>
                 </dl>
                 <hr>
                 <div class="row">
@@ -28,7 +33,11 @@
                         {!! Html::linkRoute('posts.edit', 'Bewerken', array($post->id), array('class' => 'btn btn-primary btn-block')) !!}
                     </div>
                     <div class="col-sm-6">
-                        {!! Html::linkRoute('posts.destroy', 'Verwijderen', array($post->id), array('class' => 'btn btn-danger btn-block')) !!}
+                        {{ Form::open(['route' => ['posts.destroy', $post->id], 'method' => 'DELETE']) }}
+
+                        {!! Form::submit('Verwijderen', ['class' => 'btn btn-danger btn-block']) !!}
+
+                        {!! Form::close() !!}
                     </div>
                 </div>
 

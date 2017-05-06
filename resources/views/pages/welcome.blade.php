@@ -45,11 +45,16 @@
             <br>
 
             <h1>Recente blogs</h1>
+
+            @foreach($posts as $post)
+
             <div class="jumbotron">
-                <h1>Welkom op mijn blog!</h1>
-                <p>...</p>
-                <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+                <h3>{{$post->title}}</h3>
+                <p>{{substr($post->body, 0, 300) }}{{strlen($post->body) > 300 ? "..." : ""}}</p>
+                <p><a class="btn btn-primary btn-lg" href="{{url('blog/'.$post->slug)}}" role="button">Lees meer</a></p>
             </div>
+
+                @endforeach
 
         </div>
     </div>

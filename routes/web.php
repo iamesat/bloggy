@@ -22,6 +22,10 @@ Auth::routes();
 
 Route::get('pages/contact', 'PagesController@getContact');
 
+Route::get('blog/{slug}', ['as' => 'blog.single', 'uses' => 'BlogController@getSingle']);
+
+Route::get('blog', ['uses' => 'BlogController@getIndex', 'as' => 'blog.index']);
+
 Route::resource('posts', 'PostController');
 
 Route::get('blog/home', 'HomeController@getHome');

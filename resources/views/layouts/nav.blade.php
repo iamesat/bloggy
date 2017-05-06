@@ -12,7 +12,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Blogy</a>
+            <a class="navbar-brand" href="#">Bloggy</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -22,15 +22,11 @@
                 <li><a href="#">Link</a></li>
                 <li><a href="pages/contact">Contact</a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categorie <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">Action</a></li>
                         <li><a href="#">Another action</a></li>
                         <li><a href="#">Something else here</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">One more separated link</a></li>
                     </ul>
                 </li>
             </ul>
@@ -38,13 +34,14 @@
             <ul class="nav navbar-nav navbar-right">
 
                 @if (Route::has('login'))
-                        <li>
+                    <li>
                     @if (Auth::check())
-
+                   <a href="{{ url('posts/create') }}">Nieuwe post</a>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mijn Account <span class="caret"></span></a>
+
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Welkom, {{ Auth::user()->name }} <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{ url('/home') }}">Mijn posts</a></li>
+                            <li><a href="{{ route('posts.index') }}">Mijn posts</a></li>
                             <li><a href="#">Profiel</a></li>
                             <li role="separator" class="divider"></li>
                             <li>
@@ -63,19 +60,16 @@
                     </li>
 
                     @else
-                        <a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
+
+                    <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
+                    <li><a href="{{ url('/register') }}">Register</a></li>
+
                     @endif
-                        </li>
+               </li>
                 @endif
 
             </ul>
-            <form class="navbar-form navbar-right">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Zoeken...">
-                </div>
-                <button type="submit" class="btn btn-default">Zoek</button>
-            </form>
+
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
