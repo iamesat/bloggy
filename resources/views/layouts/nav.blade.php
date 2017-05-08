@@ -10,7 +10,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Bloggy</a>
+            <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ URL::asset('img/bl.png') }}" style="margin-top:-15px;width:51px;" ></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -60,8 +60,8 @@
 
                 @else
 
-                    <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
-                    <li><a href="{{ url('/register') }}">Register</a></li>
+                    <li><a href="#" data-toggle="modal" class="glyphicon glyphicon-user" data-target="#login-modal"></a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#register-modal" class="glyphicon glyphicon-copy"></a></li>
 
                     @endif
                     </li>

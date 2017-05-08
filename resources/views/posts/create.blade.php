@@ -1,8 +1,8 @@
-@extends('main');
+@extends('main')
 
-@section('title', '- Nieuw post');
+@section('title', '- Nieuw post')
 
-@section('content');
+@section('content')
 
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
