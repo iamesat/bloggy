@@ -28,6 +28,8 @@ Route::get('blog', ['uses' => 'BlogController@getIndex', 'as' => 'blog.index']);
 
 Route::resource('posts', 'PostController');
 
+Route::post('comments/{post_id}', ['uses' => 'CommentsController@store', 'as' => 'comments.store']);
+
 Route::resource('categories', 'CategoryController', ['except' => ['create']]);
 
 Route::get('blog/home', 'HomeController@getHome');
