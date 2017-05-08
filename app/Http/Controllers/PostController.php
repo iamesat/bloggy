@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use Illuminate\Http\Request;
 use App\Post;
 use Session;
 class PostController extends Controller
 
 {
-    public function _construct() {
+    public function __construct() {
         $this->middleware('auth');
 }
     /**
@@ -38,7 +39,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('posts/create');
+        $categories = Category::all();
+        return view('posts/create')->withCategories($categories);
     }
 
     /**
@@ -52,7 +54,8 @@ class PostController extends Controller
         $this->validate($request, array(
             'title' => 'required|max:255',
             'slug' => 'required|alpha_dash|min:5|max:255',
-            'body' => 'required'
+            'body' => 'required',
+            'category_id' => 'required|integer'
         ));
 
         $post = new Post;
@@ -60,6 +63,7 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->slug = $request->slug;
         $post->body = $request->body;
+        $post->category_id = $request->category_id;
 
         $post->save();
 
@@ -89,7 +93,13 @@ class PostController extends Controller
     public function edit($id)
     {
         $post = Post::find($id);
-        return view('posts.edit')->withPost($post);
+
+        $categories = Category::all();
+        $cg = array();
+        foreach ($categories as $category) {
+            $cg[$category->id] = $category->name;
+        }
+        return view('posts.edit')->withPost($post)->withCategories($cg);
     }
 
     /**

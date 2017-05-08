@@ -28,4 +28,6 @@ Route::get('blog', ['uses' => 'BlogController@getIndex', 'as' => 'blog.index']);
 
 Route::resource('posts', 'PostController');
 
+Route::resource('categories', 'CategoryController', ['except' => ['create']]);
+
 Route::get('blog/home', 'HomeController@getHome');

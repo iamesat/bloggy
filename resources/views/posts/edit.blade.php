@@ -11,6 +11,9 @@
 
             {{ Form::text('slug', null, ["class" => 'form-control']) }}
 
+            {{ Form::label('category_id', "Categorie") }}
+            {{ Form::select('category_id', $categories, null, ['class' => 'form-control']) }}
+
             {!! Form::textarea('body', null, ['class' => 'form-control']) !!}
         </div>
 
