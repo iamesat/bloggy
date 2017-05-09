@@ -9,16 +9,23 @@
                 <p>{{$post->body}}</p>
                 <hr>
                 <p>Categorie: {{ $post->category->name }}</p>
+
+                <br><br>
+                <p><i><u>Reacties</u></i></p>
+                <hr>
             </div>
         </div>
 
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
+
                 @foreach($post->comments as $comment)
+                    <div class="jumbotron">
                     <div class="comment">
                        <p><strong>Naam: </strong>  {{ $comment->name }}</p>
-                       <p><hr><br> {{ $comment->comment }}</p><br><br>
+                       <p><hr><br> {{ $comment->comment }}</p>
 
+                    </div>
                     </div>
                 @endforeach
             </div>
@@ -43,7 +50,7 @@
                 <div class="col-md-12">
                     {{ Form::label('comment', 'Bericht:') }}
                     {{ Form::textarea('comment', null, ['class' => 'form-control'] ) }}
-
+                    <br>
                     {{ Form::submit('Plaats Reactie', ['class' => 'btn btn-success']) }}
                 </div>
                </div>

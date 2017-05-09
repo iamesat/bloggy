@@ -5,9 +5,10 @@
 @section('content')
 
 
+
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <h1>Blog</h1>
+            <h1>Blogs</h1>
         </div>
     </div>
 
@@ -19,7 +20,7 @@
 
             <p>{{ substr($post->body, 0, 250) }}{{ strlen($post->body) > 250 ? '...' : ""  }}</p>
 
-            <a href="{{route('blog.single', $post->id) }}" class="btn btn-primary">Lees Meer</a>
+            <a href="{{route('blog.single', $post->slug) }}" class="btn btn-primary">Lees Meer</a>
             <hr>
         </div>
     </div>

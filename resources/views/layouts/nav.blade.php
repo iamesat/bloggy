@@ -10,21 +10,20 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ URL::asset('img/bl.png') }}" style="margin-top:-15px;width:51px;" ></a>
+            <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ URL::asset('img/bl.png') }}" style="margin-top:-15px;width:50px;" ></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">Link</a></li>
+                <li><a href="{{ route('blog.index') }}">Blogs</a></li>
                 <li><a href="pages/contact">Contact</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categorie <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
+                        <li><a href="#">Comming soon :)</a></li>
+                        <li><a href="#">Comming soon :)</a></li>
+                        <li><a href="#">Comming soon :)</a></li>
                     </ul>
                 </li>
             </ul>
@@ -37,7 +36,7 @@
                             <a href="{{ url('posts/create') }}">Nieuwe post</a>
                     <li class="dropdown">
 
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Welkom, {{ Auth::user()->name }} <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Welkom, <u>{{ Auth::user()->name }}</u><span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ route('posts.index') }}">Mijn posts</a></li>
                             <li><a href="{{ route('categories.index') }}">Categorieen</a></li>

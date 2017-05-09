@@ -24,7 +24,7 @@
         <div class="col-md-12">
             <table class="table">
                 <thead>
-                <th>#</th>
+                <th> </th>
                 <th>Titel</th>
                 <th>Content</th>
                 <th>Geplaats op</th>
@@ -40,7 +40,7 @@
                         <th>{{$post->title}}</th>
                         <th>{{$post->body}}</th>
                         <th>{{$post->created_at}}</th>
-                        <th><a href="#" class="btn btn-default">Open</a> <a href="#" class="btn btn-primary">Bewerken</a></th>
+                        <th><a href="{{route('posts.show', $post->id) }}" class="btn btn-default">Open</a> <a href="{{route('posts.edit', $post->id) }}" class="btn btn-primary">Bewerken</a></th>
 
                     </tr>
 

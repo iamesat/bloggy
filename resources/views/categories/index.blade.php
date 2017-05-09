@@ -9,7 +9,7 @@
                 <table class="table">
                     <thead>
                     <tr>
-                        <th>#</th>
+                        <th> </th>
 
                         <th>Naam</th>
                     </tr>
@@ -34,7 +34,7 @@
                     <h2>Maak nieuwe categorie aan</h2>
                     {!! Form::label('name', 'Naam:') !!}
                     {!! Form::text('name', null, ['class' => 'form-control']) !!}
-
+                    <br>
                     {!! Form::submit('Maak aan', ['class' => 'btn btn-primary btn-block']) !!}
 
                     {!! Form::close() !!}

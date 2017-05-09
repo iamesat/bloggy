@@ -5,6 +5,7 @@
         <div class="col-md-14">
             <h1> Laatste blogs</h1>
 
+            @foreach($posts as $post)
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -15,19 +16,61 @@
 
                 <div class="carousel-inner" role="listbox">
                     <div class="item active">
-                        <img src="img/slider/sliderblog.png" alt="Chania">
+
+
+                        <!-- Static Header -->
+                        <div class="header-text hidden-xs">
+                            <div class="col-md-12 text-center">
+                                <h3>{{$post->title}}</h3>
+                                <p>{{substr($post->body, 0, 300) }}{{strlen($post->body) > 300 ? "..." : ""}}</p>
+                                <br>
+                                <p><a class="btn btn-primary btn-lg" href="{{url('blog/'.$post->slug)}}" role="button">Lees meer</a></p>
+                                <br><br><br>
+
+                            </div>
+                        </div><!-- /header-text -->
                     </div>
 
                     <div class="item">
-                        <img src="img/slider/sliderblog.png" alt="Chania">
+                        <!-- Static Header -->
+                        <div class="header-text hidden-xs">
+                            <div class="col-md-12 text-center">
+                                <h3>{{$post->title}}</h3>
+                                <p>{{substr($post->body, 0, 300) }}{{strlen($post->body) > 300 ? "..." : ""}}</p>
+                                <br>
+                                <p><a class="btn btn-primary btn-lg" href="{{url('blog/'.$post->slug)}}" role="button">Lees meer</a></p>
+                                <br><br><br>
+
+                            </div>
+                        </div><!-- /header-text -->
                     </div>
 
                     <div class="item">
-                        <img src="img/slider/sliderblog.png" alt="Flower">
+                        <!-- Static Header -->
+                        <div class="header-text hidden-xs">
+                            <div class="col-md-12 text-center">
+                                <h3>{{$post->title}}</h3>
+                                <p>{{substr($post->body, 0, 300) }}{{strlen($post->body) > 300 ? "..." : ""}}</p>
+                                <br>
+                                <p><a class="btn btn-primary btn-lg" href="{{url('blog/'.$post->slug)}}" role="button">Lees meer</a></p>
+                                <br><br><br>
+
+                            </div>
+                        </div><!-- /header-text -->
                     </div>
 
                     <div class="item">
-                        <img src="img/slider/sliderblog.png" alt="Flower">
+                        <!-- Static Header -->
+                        <div class="header-text hidden-xs">
+                            <div class="col-md-12 text-center">
+                                <h3>{{$post->title}}</h3>
+                                <p>{{substr($post->body, 0, 300) }}{{strlen($post->body) > 300 ? "..." : ""}}</p>
+                                <br>
+                                <p><a class="btn btn-primary btn-lg" href="{{url('blog/'.$post->slug)}}" role="button">Lees meer</a></p>
+                                <br><br><br>
+
+                            </div>
+                        </div><!-- /header-text -->
                     </div>
                 </div>
 
@@ -41,6 +84,7 @@
                     <span class="sr-only">Next</span>
                 </a>
             </div>
+            @endforeach
             <br>
             <br>
 
@@ -48,13 +92,21 @@
 
             @foreach($posts as $post)
 
+                <div class="col-md-8">
             <div class="jumbotron">
+
                 <h3>{{$post->title}}</h3>
                 <p>{{substr($post->body, 0, 300) }}{{strlen($post->body) > 300 ? "..." : ""}}</p>
                 <p><a class="btn btn-primary btn-lg" href="{{url('blog/'.$post->slug)}}" role="button">Lees meer</a></p>
+
             </div>
 
-                @endforeach
+            </div>
+            @endforeach
+
+
+
+
 
         </div>
     </div>

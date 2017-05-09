@@ -13,10 +13,10 @@
             {{ Form::label('title', 'Title:') }}
             {{ Form::text('title', null, array('class' => 'form-control')) }}
 
-            {{Form::label('slug', 'Slug')}}
+            {{Form::label('slug', 'Slug:')}}
         {{ Form::text('slug', null, array('class' => 'form-control')) }}
 
-        {{Form::label('category', 'Categorie')}}
+        {{Form::label('category', 'Categorie:')}}
         <select class="form-control" name="category">
             @foreach($categories as $category)
                 <option value='{{ $category->id }}'>{{ $category->name }}</option>
@@ -26,7 +26,7 @@
 
             {{ Form::label('body', "Post Body:" ) }}
             {{ Form::textarea('body', null, array('class' => 'form-control' )) }}
-
+            <br>
             {{ Form::submit('Maak aan', array('class' => 'btn btn-success')) }}
         {{ Form::close() }}
 
