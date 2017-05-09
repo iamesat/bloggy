@@ -11,7 +11,7 @@
      </div>
 
      <div class="col-md-2">
-         <a href="{{ route('posts.create') }}" class="btn btn-lg btn-block btn-primary">Nieuw Post</a>
+         <a href="{{ route('posts.create') }}" class="btn btn-lg btn-block btn-primary">Nieuwe Post</a>
      </div>
     <div class="col-md-12">
         <hr>
@@ -38,7 +38,7 @@
                     <tr>
                         <th>{{$post->id}}</th>
                         <th>{{$post->title}}</th>
-                        <th>{{$post->body}}</th>
+                        <th>{{ substr($post->body, 0, 150) }}{{ strlen($post->body) > 250 ? '...' : ""  }}</th>
                         <th>{{$post->created_at}}</th>
                         <th><a href="{{route('posts.show', $post->id) }}" class="btn btn-default">Open</a> <a href="{{route('posts.edit', $post->id) }}" class="btn btn-primary">Bewerken</a></th>
 
