@@ -19,7 +19,7 @@
                 </dl>
 
                 <dl class="dl-horizontal">
-                    <label>Url:</label>
+                    <label>Categorie:</label>
                     <p>{{ $post->category->name }}</p>
                 </dl>
 

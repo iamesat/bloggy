@@ -15,49 +15,7 @@
                 </ol>
 
                 <div class="carousel-inner" role="listbox">
-                    <div class="item active">
 
-
-                        <!-- Static Header -->
-                        <div class="header-text hidden-xs">
-                            <div class="col-md-12 text-center">
-                                <h3>{{$post->title}}</h3>
-                                <p>{{substr($post->body, 0, 300) }}{{strlen($post->body) > 300 ? "..." : ""}}</p>
-                                <br>
-                                <p><a class="btn btn-primary btn-lg" href="{{url('blog/'.$post->slug)}}" role="button">Lees meer</a></p>
-                                <br><br><br>
-
-                            </div>
-                        </div><!-- /header-text -->
-                    </div>
-
-                    <div class="item">
-                        <!-- Static Header -->
-                        <div class="header-text hidden-xs">
-                            <div class="col-md-12 text-center">
-                                <h3>{{$post->title}}</h3>
-                                <p>{{substr($post->body, 0, 300) }}{{strlen($post->body) > 300 ? "..." : ""}}</p>
-                                <br>
-                                <p><a class="btn btn-primary btn-lg" href="{{url('blog/'.$post->slug)}}" role="button">Lees meer</a></p>
-                                <br><br><br>
-
-                            </div>
-                        </div><!-- /header-text -->
-                    </div>
-
-                    <div class="item">
-                        <!-- Static Header -->
-                        <div class="header-text hidden-xs">
-                            <div class="col-md-12 text-center">
-                                <h3>{{$post->title}}</h3>
-                                <p>{{substr($post->body, 0, 300) }}{{strlen($post->body) > 300 ? "..." : ""}}</p>
-                                <br>
-                                <p><a class="btn btn-primary btn-lg" href="{{url('blog/'.$post->slug)}}" role="button">Lees meer</a></p>
-                                <br><br><br>
-
-                            </div>
-                        </div><!-- /header-text -->
-                    </div>
 
                     <div class="item">
                         <!-- Static Header -->

@@ -27,6 +27,7 @@
                 <th> </th>
                 <th>Titel</th>
                 <th>Content</th>
+                <th>Slug</th>
                 <th>Geplaats op</th>
                 <th></th>
                 </thead>
@@ -38,7 +39,8 @@
                     <tr>
                         <th>{{$post->id}}</th>
                         <th>{{$post->title}}</th>
-                        <th>{{ substr($post->body, 0, 150) }}{{ strlen($post->body) > 250 ? '...' : ""  }}</th>
+                        <th>{{ substr($post->body, 0, 80) }}{{ strlen($post->body) > 200 ? '...' : ""  }}</th>
+                        <th>{{$post->slug}}</th>
                         <th>{{$post->created_at}}</th>
                         <th><a href="{{route('posts.show', $post->id) }}" class="btn btn-default">Open</a> <a href="{{route('posts.edit', $post->id) }}" class="btn btn-primary">Bewerken</a></th>
 

@@ -10,21 +10,19 @@
         <hr>
 
         {{ Form::open(array('route' => 'posts.store')) }}
-            {{ Form::label('title', 'Title:') }}
-            {{ Form::text('title', null, array('class' => 'form-control')) }}
 
+            {{ Form::label('title', 'Titel:') }}
+            {{ Form::text('title', null, array('class' => 'form-control')) }}
+            <br>
             {{Form::label('slug', 'Slug:')}}
         {{ Form::text('slug', null, array('class' => 'form-control')) }}
+            <br>
 
-        {{Form::label('category', 'Categorie:')}}
-        <select class="form-control" name="category">
-            @foreach($categories as $category)
-                <option value='{{ $category->id }}'>{{ $category->name }}</option>
-                @endforeach
-        </select>
+        {{ Form::label('category_id', "Categorie") }}
+        {{ Form::select('category_id', $categories, null, ['class' => 'form-control']) }}
 
-
-            {{ Form::label('body', "Post Body:" ) }}
+            <br>
+            {{ Form::label('body', "Content:" ) }}
             {{ Form::textarea('body', null, array('class' => 'form-control' )) }}
             <br>
             {{ Form::submit('Maak aan', array('class' => 'btn btn-success')) }}

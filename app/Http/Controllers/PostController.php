@@ -53,16 +53,16 @@ class PostController extends Controller
     {
         $this->validate($request, array(
             'title' => 'required|max:255',
-            'slug' => 'required|alpha_dash|min:5|max:255',
             'body' => 'required',
+            'slug' => 'required|alpha_dash|min:5|max:255',
             'category_id' => 'required|integer'
         ));
 
         $post = new Post;
 
         $post->title = $request->title;
-        $post->slug = $request->slug;
         $post->body = $request->body;
+        $post->slug = $request->slug;
         $post->category_id = $request->category_id;
 
         $post->save();

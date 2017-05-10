@@ -20,13 +20,22 @@
             <div class="col-md-8 col-md-offset-2">
 
                 @foreach($post->comments as $comment)
-                    <div class="jumbotron">
-                    <div class="comment">
-                       <p><strong>Naam: </strong>  {{ $comment->name }}</p>
-                       <p><hr><br> {{ $comment->comment }}</p>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+
+                        <h3 class="panel-title"><strong>Naam: </strong>  {{ $comment->name }}</h3>
+                        <br>
+                    </div>
+                                  <div class="panel-body">
+                                {{ $comment->comment }}
+                            </div>
+                        <br>
+
+                        <hr>
+                        <p>Geplaatst op:{{ $comment->created_at }} </p>
 
                     </div>
-                    </div>
+
                 @endforeach
             </div>
         </div>
